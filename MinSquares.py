@@ -1,3 +1,6 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
 def getNumber02(x, type):  # проверка на ввод числа
     while True:
         if type == 'int':
@@ -12,7 +15,7 @@ def getNumber02(x, type):  # проверка на ввод числа
                 return getNumber
             except ValueError:
                 print('Введите запись типа: ' + str(type))
-def dotsInput():
+def dotsInput():# это уйдёт в грид ввод
    xy = []
    for i in range(getNumber02('количество точек','int')):
        xy.append((getNumber02(f'x_{i}','float'),getNumber02(f'y_{i}','float')))
@@ -21,15 +24,14 @@ def dotsInput():
 class MinSquares:
     dictMS = {'x': [], 'y': []}
     a, b = None, None # дописать
-    def func(self,x): return self.a*x+self.b
-    def graphics(self):
+    def gauss(self): #как для матрицы 3/2 так и для 4/3
         pass
-    def lineMethod(self):
-        print(f"y = {(a:= ((y := sum(self.dictMS['y'])) - (n := len(self.dictMS['x'])) * (b := ((sum(list(map(lambda x, y: x * y, self.dictMS['x'], self.dictMS['y'])))) - ((x2 := sum(list(map(lambda x: x ** 2, self.dictMS['x'])))) * y / (x := sum(self.dictMS['x'])))) / ((x - (x2 * n / x))))) / x)}x + {b}")
-
-    def squareMethod(self):
+    def graphics(self,func):#возвращает график
         pass
-    def __init__(self):
-
+    def lineMethod(self):#return lambda x: a*x+b
+        pass
+    def squareMethod(self):#return lambda x: a*(x**2)+a1*x+a2
+        pass
+    def __init__(self):# в будущем переделать на грид ввод
         self.dictMS['x'], self.dictMS['y'] = zip(*dotsInput())
 
