@@ -17,4 +17,6 @@ def parasha(m,n):
         {u2[i][0]:-f}\t{u2[i][1]:-f}
         тут не понимаю вывод 
     ''')
-map(parasha, [5,10,10], [80,80,250])
+parasha(5,80)
+parasha(10,80)
+parasha(10,250)
